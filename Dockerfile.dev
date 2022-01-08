@@ -1,0 +1,18 @@
+FROM node:16-alpine
+
+WORKDIR '/usr/app'
+
+COPY package.json .             
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
+###Testin Container
+### docker run 2616c16b093fc872257bc3b606f717f251df0301cea967dddf7a6cbd46a6b7fc npm run test
+
+### docker run -it 2616c16b093fc872257bc3b606f717f251df0301cea967dddf7a6cbd46a6b7fc npm run test. 
+    ### -it parameter gives interactivity
+
+## docker exec -it 6f7d9009bf89 npm run test

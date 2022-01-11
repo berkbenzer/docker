@@ -8,6 +8,9 @@ RUN npm run build
 
 ## Second Phase
 FROM nginx
+
+### Expose Port Number
+EXPOSE 80   
 COPY --from=builder /usr/app/build /usr/share/nginx/html
 
 
